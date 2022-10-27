@@ -45,3 +45,41 @@ class MyTranspose
         @arr.transpose
     end 
 end
+
+class Hanoi
+    attr_accessor :a, :b, :c
+    def initialize
+        @a = [1,2,3,4]
+        @solution = @a.dup
+        @b = []
+        @c = []
+    end
+
+    # def empty?
+    #     nil?
+    # end
+
+    def move_piece(start_arr, end_arr)
+        # raise ArgumentError  #"Should only take in two arguments" if ArgumentError
+        if start_arr.empty? 
+            raise "There is no piece here"
+        end
+        end_arr << start_arr.pop
+    end 
+
+    def won?
+        if @c == @solution
+            return true
+        end
+        return false
+    end
+
+    def play
+        until won?
+            puts "Enter a starting position and ending position"
+            input = gets.chomp.to_s 
+            start, ending = input
+            move_piece(start.to_a, ending.to_a)
+        end
+    end
+end

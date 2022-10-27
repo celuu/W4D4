@@ -32,3 +32,18 @@ describe MyTranspose do
     end
 end
 
+describe Hanoi do
+    subject(:array) {Hanoi.new}
+    describe "::move_piece" do
+        it "Should only take in two arguments" do
+            expect{array.move_piece(array,array,array)}.to raise_error(ArgumentError)
+        end
+    end
+    
+    describe "won" do
+        it "Should end the game when the user wins" do
+            expect(array.won?).to eq (array.won?)
+        end
+    end
+end
+
