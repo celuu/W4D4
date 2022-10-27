@@ -10,7 +10,7 @@ class Unique
     end
 end
 
-class Two_sum
+class TwoSum
     attr_accessor :arr
 
     def initialize(arr)
@@ -33,9 +33,15 @@ class Two_sum
         new_arr
     end
 
+end
 
+class MyTranspose
+    attr_accessor :arr
+    def initialize(arr)
+        @arr = arr
+    end
 
-
-
-
+    def my_transpose
+        @arr.transpose
+    end 
 end
